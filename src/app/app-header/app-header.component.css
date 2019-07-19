@@ -1,0 +1,30 @@
+
+/* app title bar styles */
+.header {
+	background: #06f;
+  min-height: 32px;
+  border-bottom: 1px solid rgba(#000, .12);
+}
+
+h1, .app-title {
+	color: white;
+	font-size: 1em;
+  font-weight: normal;
+  margin: 0px;
+  padding-left: 10px;
+}
+
+/* app tip text styles */
+.app-tip {
+	color: #eee;
+	font-size: .8em;
+	padding-left: 10px;
+}
+
+.app-tip > a {
+	color: #00ffff;
+	font-size: 1.2em;
+  font-weight: normal;
+  text-decoration: none;
+}
+

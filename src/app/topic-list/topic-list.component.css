@@ -1,0 +1,110 @@
+/*aside {
+  width: 260px;
+  float: left;
+}*/
+
+/* UI tip text styles */
+.ui-tip {
+	color: #666;
+	font-size: .8em;
+	padding: 5px;
+}
+
+/* data list item styles */
+.data-list {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	list-style: none;	
+	height: 100%;
+}
+
+.data-list li {
+ 	border: 1px solid #ccc;
+	border-collapse: collapse;
+	background-color: #fff;
+	margin: 0px;
+	padding: 5px;
+  cursor: pointer;	
+}
+
+.data-list > li[class=selected] {
+	background-color: #e0e0e0;
+}
+
+.list-item {
+	border: 0px;	
+ 	border-top: solid 1px #ccc;
+	background-color: #fff;
+	padding: 5px;	
+	width: 100%;
+	display: inline-block;
+}
+
+.list-item-footer {
+	padding: 0px;	
+}
+
+.list-item-text {
+ 	border: 0px;
+	background-color: #fff;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* toolbar/button styles */
+.toolbar {
+	background-color: #eee;
+}
+
+.green-button {
+	color: green;
+	font-weight: bold;
+}
+
+.red-button {
+	color: red;
+	font-weight: bold;
+}
+
+/* topic editor container styles */
+.topic-editor {
+	background-color: #fff;
+  padding: 5px;
+}
+
+.topic-toggles {
+	background-color: #fff;	
+	line-height: 24px;
+	margin: 0px;
+  padding: 5px;
+}
+
+/* stroke/fill color box styles */
+.color-box {
+	border-radius: 12px;
+	display: inline-block;
+	line-height: normal;	
+  height: 24px;
+  width: 24px;
+	vertical-align: middle;
+}
+
+.stroke-color-box {
+	border: 1px solid black;
+}
+
+.color-box:hover {
+  cursor: pointer;
+  border: 1px solid orangered;
+}
+
+.label {
+	padding-left: 5px;
+}
+
+.hidden {
+	display: none;
+}

@@ -1,0 +1,28 @@
+
+/* Venn Diagram view styles */
+.diagram {
+  height: 640px;
+  padding: 10px;
+}
+
+.svg {
+  border: 1px solid #999;
+}
+
+/* toolbar/button styles */
+.toolbar {
+	background-color: #eee;
+  text-align: right;
+}
+
+.toolbar-left {
+  float: left;
+}
+
+.toolbar-right {
+  float: right;
+}
+
+.symbol-button {
+  font-size: 1.8em;
+}

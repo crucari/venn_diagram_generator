@@ -1,0 +1,80 @@
+<main id="diagram-view" class="main-content diagram">
+  <svg id="svg" class="svg" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 540 540">
+    <!-- diagram title -->
+    <text id="svg-diagram-title" 
+      x="50%" y="20" 
+      font-size="22" 
+      font-weight="bold"
+      text-anchor="middle">{{diagram.name}} Venn Diagram</text>
+    <!-- segments svg -->
+    <g id="segments-group">
+      <!-- main diagram circle
+      <circle cx="50%" cy="50%" r="60"
+        style="fill: #ffffb3; stroke: black; stroke-width: 2;">
+      </circle>
+      -->
+      <g *ngFor="let topic of diagram.topics; let i=index;" 
+        [attr.data-index]="i"
+        [attr.id]="'segment-group-' + i">
+        <ellipse 
+          [attr.id]="'segment-' + i"
+          [attr.cx]="topic.cx" 
+          [attr.cy]="topic.cy"
+          [attr.rx]="topic.rx" 
+          [attr.ry]="topic.ry"
+          [attr.transform]="'rotate(' + topic.rotateAngle + ' ' + topic.cx + ' ' + topic.cy + ')'"
+          [style.fill]="topic.fillColor"
+          [style.fill-opacity]=".6"
+          [style.stroke]="topic.strokeColor"
+          [style.stroke-width]="2">
+        </ellipse>
+      </g>
+    </g>  
+    <!-- segment labels svg -->
+    <g id="segment-labels-group">
+      <!-- main diagram topic label -->
+      <text id="intersection-label" 
+        x="50%" y="50%" 
+        font-size="18" 
+        font-weight="bold"
+        text-anchor="middle">{{diagram.name}}</text>
+      <g *ngFor="let topic of diagram.topics; let i=index;" 
+        [attr.data-index]="i"
+        [attr.id]="'segment-label-group-' + i">
+        <text 
+          [attr.id]="'segment-label-' + i"
+          [attr.x]="topic.textX" 
+          [attr.y]="topic.textY"
+          [attr.transform]="'rotate(' + topic.rotateAngle + ' ' + topic.textX + ' ' + topic.textY + ')'"
+          font-size="16"
+          text-anchor="middle">{{topic.name}}</text>
+      </g>
+    </g>  
+    <!-- created by app link group -->
+    <g id="created-by-group">
+      <text x="10" y="530" font-size="10">created by: </text>
+      <a xlink:href="https://venn-diagrams.herokuapp.com">
+        <text x="60" y="530" heigt="20" font-size="10">https://venn-diagrams.herokuapp.com</text>
+      </a>
+    </g>
+  </svg>
+  <!-- diagram svg toolbar -->
+  <div class="toolbar">
+    <!-- diagram layouts toolbar -->
+    <div class="toolbar-left">
+      <button class="symbol-button" (click)="changeLayout('circles')">&#9763;</button><!--biohazard sign-->
+      <button class="symbol-button" (click)="changeLayout('ellipses')">&#9883;</button><!--atom-->
+      <!-- random circles and ellipses layout just for fun -->
+      <button class="symbol-button" (click)="changeLayout('random')">&#9760;</button>
+    </div>
+    <!-- save diagram svg toolbar -->    
+    <div class="toolbar-right">
+      <button id="export-svg-button" (click)="exportSvg()">Export SVG</button>
+      <!-- TODO: see why this broke in last download blob refactor 
+      <button id="save-png-button" (click)="saveAsPng()">Save as PNG</button>
+    -->
+    </div>    
+  </div>  
+</main>
